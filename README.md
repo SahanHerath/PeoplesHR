@@ -1,0 +1,1 @@
+This is a HR project whch we use to select the rooster for a particular day and maintain our employee records and other details as well. This will include many more HR related features and AI related features. 

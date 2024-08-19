@@ -1,0 +1,14 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom gradient colors */
+@layer utilities {
+  .bg-gradient-orange {
+    background: linear-gradient(135deg, #FF7F50, #FF4500);
+  }
+  .text-orange {
+    color: #FF4500;
+  }
+}

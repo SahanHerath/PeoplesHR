@@ -161,5 +161,4 @@ router.post('/register-details', (req, res) => {
   );
 });
 
-
 module.exports = router;

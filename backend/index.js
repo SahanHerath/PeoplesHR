@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth.js');
+const profileRoutes = require('./routes/profile.js');
 
 app.use(bodyParser.json());
 
@@ -11,6 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/profile', profileRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

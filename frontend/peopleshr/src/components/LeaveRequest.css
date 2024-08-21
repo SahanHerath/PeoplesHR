@@ -1,0 +1,81 @@
+.leave-request-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leave-request-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: #2980b9;
+}
+
+.tab:not(.active):hover {
+    background-color: #2980b9;
+}
+
+.leave-form .form-group {
+    margin-bottom: 15px;
+}
+
+.leave-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+    font-weight: bold;
+}
+
+.leave-form .form-group input,
+.leave-form .form-group select,
+.leave-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #495057;
+}
+
+.leave-form .form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #218c53;
+}

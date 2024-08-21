@@ -163,8 +163,8 @@
 /* Workdays section styling */
 .workdays-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Space between workday items */
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .workday-item,

@@ -3,6 +3,7 @@ import './Dashboard.css';
 import DashboardContent from './DashboardContent'; // Import the new component
 import logo from '../assets/PeoplesHR.webp'; // Update with the correct path to your logo
 import Profile from './Profile';
+import LeaveRequest from './LeaveRequest';
 
 const Dashboard = () => {
   const [selectedTab, setSelectedTab] = useState('dashboard');
@@ -14,12 +15,21 @@ const Dashboard = () => {
       case 'calendar':
         return <h1>Calendar Content</h1>;
       case 'request-leave':
-        return <h1>Request Leave Content</h1>;
+        return <LeaveRequest />;
       case 'dashboard':
       default:
         return <DashboardContent />;
     }
   };
+
+  const handleLogout = () => {
+      // Clear the user-related data from localStorage
+      localStorage.removeItem('userId');
+      localStorage.removeItem('token');
+  
+      // Redirect the user to the login page
+      window.location.href = '/login';
+  }
 
   return (
     <div className="dashboard-container">
@@ -58,7 +68,7 @@ const Dashboard = () => {
           </a>
         </nav>
         <div className="logout-container">
-          <a href="/logout" className="nav-link logout">
+          <a href="#" className="nav-link logout" onClick={handleLogout}>
             Logout
           </a>
         </div>

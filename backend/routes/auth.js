@@ -115,6 +115,8 @@ router.post('/register-details', (req, res) => {
     hasChildren,
   } = req.body;
 
+  console.log("position", position);
+
   // First query to insert user details
   connection.query(
     'INSERT INTO user_details (user_id, name, position, team, gender, age, employee_type, distance_to_office, medical_description, children_available) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',

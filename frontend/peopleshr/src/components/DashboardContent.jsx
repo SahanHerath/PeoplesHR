@@ -111,7 +111,7 @@
 // export default DashboardContent;
 
 import React from 'react';
-import './DashboardContent.css'; // Import the new component
+import './DashboardContent.css'; // Import the CSS
 import User1 from '../assets/User1.jpg'; 
 import User2 from '../assets/User2.jpg'; 
 import User3 from '../assets/User3.jpg'; 
@@ -148,6 +148,17 @@ const DashboardContent = () => {
     casualLeave: 5,
   };
 
+  // Dummy data for table
+  const leaveTableData = [
+    { month: 'January', leaves: 2, status: 'Pending' },
+    { month: 'February', leaves: 1, status: 'Approved' },
+    { month: 'March', leaves: 3, status: 'Rejected' },
+    { month: 'April', leaves: 0, status: 'Approved' },
+    { month: 'May', leaves: 0, status: 'Approved' },
+
+    // Add more rows as needed
+  ];
+
   return (
     <div className="dashboard-content">
       {/* Team Section */}
@@ -173,23 +184,49 @@ const DashboardContent = () => {
         </div>
       </div>
 
-      {/* Middle Section */}
+      {/* Middle Section: Leave Balance */}
       <div className="leave-balance-section">
         <h3>Leave Balance Overview</h3>
         <div className="leave-summary">
-          <p><strong>Medical Leave:</strong> {leaveData.medicalLeave} days remaining</p>
-          <p><strong>Annual Leave:</strong> {leaveData.annualLeave} days remaining</p>
-          <p><strong>Casual Leave:</strong> {leaveData.casualLeave} days remaining</p>
-        </div>
-        <div className="pie-charts">
-          <div className="pie-chart">
+          <div className="leave-summary-item">
+            <p><strong>Medical Leave:</strong> {leaveData.medicalLeave} days remaining</p>
+          </div>
+          <div className="leave-summary-item">
+            <p><strong>Annual Leave:</strong> {leaveData.annualLeave} days remaining</p>
+          </div>
+          <div className="leave-summary-item">
+            <p><strong>Casual Leave:</strong> {leaveData.casualLeave} days remaining</p>
+          </div>
+        </div>        
+        <div className="pie-chart-table-section">
+          <div className="pie-chart-container">
             <LeaveBalancePieChart data={[leaveData.medicalLeave, leaveData.annualLeave, leaveData.casualLeave]} />
+          </div>
+
+          <div className="leave-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Leaves</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {leaveTableData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.month}</td>
+                    <td>{row.leaves}</td>
+                    <td>{row.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
 
-
-      {/* Bottom Section: Leave Balance */}
+      {/* Bottom Section: Widgets */}
       <div className="middle-section">
         <div className="left-column">
           <div className="widget">
@@ -233,4 +270,5 @@ const DashboardContent = () => {
 };
 
 export default DashboardContent;
+
 

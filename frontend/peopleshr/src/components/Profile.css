@@ -1,3 +1,4 @@
+/* Profile container styling */
 .profile-container {
   max-width: 800px;
   margin: 0 auto;
@@ -7,11 +8,32 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Button styling for editing profile */
+.edit-profile-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+  background-color: #2980b9;
+}
+
+/* Header styling */
 .profile-header {
   text-align: center;
   margin-bottom: 20px;
 }
 
+/* Profile picture styling */
 .profile-pic {
   width: 150px;
   height: 150px;
@@ -21,6 +43,7 @@
   margin-bottom: 10px;
 }
 
+/* Profile info styling */
 .profile-info h3 {
   color: #34495e;
   margin-bottom: 10px;
@@ -32,10 +55,12 @@
   margin-bottom: 10px;
 }
 
+/* Additional details container */
 .additional-details-container {
   margin-top: 20px;
 }
 
+/* Header for additional details */
 .additional-details-header {
   display: flex;
   justify-content: space-between;
@@ -56,6 +81,7 @@
   font-size: 24px;
 }
 
+/* Additional details styling */
 .additional-details {
   background-color: #ecf0f1;
   padding: 15px;
@@ -74,6 +100,7 @@
   margin-bottom: 10px;
 }
 
+/* Availability table styling */
 .availability-table {
   width: 100%;
   border-collapse: collapse;
@@ -96,6 +123,7 @@
   background-color: #f2f3f7;
 }
 
+/* Icon styling for check and times */
 .icon-check {
   color: green;
 }

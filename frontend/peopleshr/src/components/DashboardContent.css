@@ -1,131 +1,218 @@
 .dashboard-content {
-    padding: 20px;
-    background-color: #f0f4f8; /* Light background for better contrast */
-  }
-  
-  .team-section {
-    margin-bottom: 30px;
-    text-align: center;
-    background-color: #ffffff; /* White background for the team section */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .team-section h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 24px;
-  }
-  
-  .team-members {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Increased gap for better spacing */
-  }
-  
-  .team-member {
-    text-align: center;
-    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
-  }
-  
-  .team-member:hover {
-    transform: scale(1.05); /* Slightly enlarge the team member card on hover */
-  }
-  
-  .team-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow around the image */
-    margin-bottom: 10px;
-  }
-  
-  .team-member p {
-    color: #34495e;
-    font-weight: bold;
-  }
-  
-  .middle-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .left-column,
-  .right-column {
-    width: 48%;
-  }
-  
-  .widget {
-    background-color: #ffffff; /* White background for widgets */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth effects */
-  }
-  
-  .widget:hover {
-    transform: translateY(-5px); /* Slightly lift the widget on hover */
-    background-color: #f8f9fa; /* Lighten the widget background on hover */
-  }
-  
-  .widget h3 {
-    color: #2980b9; /* Bright blue for widget titles */
-    margin-bottom: 15px;
-    font-size: 20px;
-    border-bottom: 2px solid #3498db; /* Add a bottom border to titles */
-    padding-bottom: 5px;
-  }
-  
-  .widget p {
-    color: #7f8c8d;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  .leave-balance-section {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .leave-balance-section h3 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 24px;
-  }
-  
-  .leave-summary {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .leave-summary p {
-    color: #34495e;
-    font-weight: bold;
-  }
-  
-  .pie-charts {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .pie-chart {
-    width: 300px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  padding: 20px;
+  background-color: #f0f4f8; /* Light background for better contrast */
+}
+
+.team-section {
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: #ffffff; /* White background for the team section */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.team-section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Increased gap for better spacing */
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.team-member {
+  text-align: center;
+  transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+
+.team-member:hover {
+  transform: scale(1.05); /* Slightly enlarge the team member card on hover */
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #e3e6eb; /* Subtle border around images */
+}
+
+.team-member p {
+  color: #34495e;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.middle-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  margin-bottom: 30px;
+}
+
+.left-column,
+.right-column {
+  width: 48%;
+}
+
+.widget {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.widget:hover {
+  transform: translateY(-5px);
+  background-color: #f8f9fa;
+}
+
+.widget h3 {
+  color: #2980b9;
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+.widget p {
+  color: #7f8c8d;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.leave-balance-section {
+  background-color: #ffffff;
+  padding: 0px 45px 45px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  margin-bottom: 35px;
+  max-width: 1200px;
+  text-align: center;
+  border: 1px solid #e3e6eb;
+}
+
+.leave-balance-section h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #e3e6eb;
+  padding-bottom: 15px;
+}
+
+.leave-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  border: 1px solid #e3e6eb;
+}
+
+.leave-summary-item {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.leave-summary-item:last-child {
+  border-right: none;
+}
+
+.leave-summary p {
+  color: #34495e;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.leave-summary p strong {
+  color: #007bff;
+  font-size: 22px;
+}
+
+.pie-chart-table-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.pie-chart-container {
+  width: 480px;
+  height: 300px;
+  background-color: #f8f9fc;
+  border: 1px solid #e3e6eb;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pie-chart-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pie-chart-container canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.leave-table-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e3e6eb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 480px;
+  height: 300px;
+  float: right;
+  border-radius: 10px;
+}
+
+/* Remove borders from the table and add padding for a cleaner look */
+.leave-table-container table {
+  width: 100%;
+  border-collapse: separate; /* Ensure there are no borders between cells */
+  border-spacing: 0; /* Remove space between cells */
+}
+
+.leave-table-container th,
+.leave-table-container td {
+  padding: 12px;
+  text-align: left;
+  color: #333; /* Text color for better readability */
+}
+
+.leave-table-container th {
+  background-color: #f2f2f2;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00698f; /* Text color for headers */
+}
+
+.leave-table-container tr {
+  transition: background-color 0.3s ease;
+}
+
+.leave-table-container tr:hover {
+  background-color: #f9f9f9; /* Light grey background on hover */
+}

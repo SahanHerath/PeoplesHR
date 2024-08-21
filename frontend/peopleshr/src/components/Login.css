@@ -1,100 +1,124 @@
-
+/* Container for the login view */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .login-box {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 400px; 
-  }
-  
-  .login-logo {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  .login-error {
-    color: red;
-    margin-bottom: 15px;
-  }
-  
-  .login-form .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .login-form .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .login-form .form-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .login-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .register-link {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #007bff;
-  }
-  
-  .register-link a {
-    color: #0056b3;
-    text-decoration: none;
-  }
-  
-  .register-link a:hover {
-    text-decoration: underline;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../assets/backgroundHR.jpg'); /* Ensure path is correct */
+}
 
-  .forgot-password-link {
-    text-align: right;
-    margin-bottom: 15px;
-  }
-  
-  .forgot-password-link a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .forgot-password-link a:hover {
-    text-decoration: underline;
-  }
-  
-  
+/* Box that holds the login form */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(153, 6, 6, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px; 
+}
 
-  
+/* Logo at the top of the login box */
+.login-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* Title styling */
+.login-box h2 {
+  color: #333; /* Dark text color for visibility */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Error message styling */
+.login-error {
+  color: #e74c3c; /* Bright red for better visibility */
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Form styling */
+.login-form .form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Align labels to the left */
+}
+
+/* Labels inside the form */
+.login-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333; /* Dark text color for visibility */
+  font-size: 14px;
+}
+
+/* Input fields styling */
+.login-form .form-input {
+  width: calc(100% - 22px); /* Adjusted for padding */
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333; /* Dark text color for readability */
+  background-color: #ffffff; /* White background for input fields */
+  margin-top: 5px; /* Space between label and input field */
+}
+
+/* Button styling */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.login-button:active {
+  transform: translateY(1px);
+}
+
+/* Register link styling */
+.register-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.register-link a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Forgot password link styling */
+.forgot-password-link {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-password-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}

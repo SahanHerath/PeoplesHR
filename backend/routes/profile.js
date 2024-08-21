@@ -110,4 +110,42 @@ router.put('/additional/:userId', (req, res) => {
   );
 });
 
+router.put('/work-details/:userId', (req, res) => {
+  const userId = req.params.userId;
+  const { workDays } = req.body;
+
+  // Construct SQL queries for updating work days
+  const updateQuery = `
+    UPDATE work_days 
+    SET 
+      monday = ?,
+      tuesday = ?,
+      wednesday = ?,
+      thursday = ?,
+      friday = ?,
+      saturday = ?,
+      sunday = ?
+    WHERE user_id = ?
+  `;
+
+  const queryValues = [
+    workDays.Monday ? 1 : 0,
+    workDays.Tuesday ? 1 : 0,
+    workDays.Wednesday ? 1 : 0,
+    workDays.Thursday ? 1 : 0,
+    workDays.Friday ? 1 : 0,
+    workDays.Saturday ? 1 : 0,
+    workDays.Sunday ? 1 : 0,
+    userId
+  ];
+
+  connection.query(updateQuery, queryValues, (err, result) => {
+    if (err) {
+      return res.status(500).json({ message: 'Failed to update work details', error: err });
+    }
+
+    res.status(200).json({ message: 'Work details updated successfully' });
+  });
+});
+
 module.exports = router;

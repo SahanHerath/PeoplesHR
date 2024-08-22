@@ -1,0 +1,68 @@
+.leave-management-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filters select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  
+  .leave-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .leave-table th, .leave-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .leave-table th {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .leave-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .leave-table button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .leave-table button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .leave-table button:first-of-type {
+    background-color: #27ae60;
+  }
+  
+  .leave-table button:last-of-type {
+    background-color: #e74c3c;
+  }
+
+  .apply-button {
+    color: #ffffff;
+    background-color: #3498db;
+  }
+  

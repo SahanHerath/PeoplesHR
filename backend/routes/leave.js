@@ -84,4 +84,42 @@ router.post('/annual-leave-request', (req, res) => {
     });
   });
 
+  router.get('/all-leaves', (req, res) => {
+    const query = `
+      SELECT l.leave_id, l.type, l.start_date, l.end_date, l.status, l.reason, l.number_of_days, l.session, u.name, u.team
+      FROM leaves l
+      JOIN user_details u ON l.user_id = u.user_id
+    `;
+    connection.query(query, (err, results) => {
+      if (err) {
+        return res.status(500).json({ success: false, message: 'Failed to fetch leave requests', error: err });
+      }
+      res.status(200).json(results);
+    });
+  });
+  
+  // PUT route to accept a leave request
+  router.put('/leaves/:id/accept', (req, res) => {
+    const leaveId = req.params.id;
+    const query = 'UPDATE leaves SET status = ? WHERE id = ?';
+    connection.query(query, ['accepted', leaveId], (err, result) => {
+      if (err) {
+        return res.status(500).json({ success: false, message: 'Failed to accept leave request', error: err });
+      }
+      res.status(200).json({ success: true, message: 'Leave request accepted successfully' });
+    });
+  });
+  
+  // PUT route to reject a leave request
+  router.put('/leaves/:id/reject', (req, res) => {
+    const leaveId = req.params.id;
+    const query = 'UPDATE leaves SET status = ? WHERE id = ?';
+    connection.query(query, ['rejected', leaveId], (err, result) => {
+      if (err) {
+        return res.status(500).json({ success: false, message: 'Failed to reject leave request', error: err });
+      }
+      res.status(200).json({ success: true, message: 'Leave request rejected successfully' });
+    });
+  });
+
 module.exports = router;

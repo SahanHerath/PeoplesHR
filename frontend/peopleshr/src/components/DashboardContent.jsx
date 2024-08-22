@@ -163,7 +163,7 @@ const DashboardContent = () => {
     <div className="dashboard-content">
       {/* Team Section */}
       <div className="team-section">
-        <h2>Current Team: FASTEN</h2>
+        <h2>CURRENT TEAM: FASTEN</h2>
         <div className="team-members">
           <div className="team-member">
             <img src={User1} alt="John Doe" className="logo" width={150} height={150}/>

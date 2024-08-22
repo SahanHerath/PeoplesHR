@@ -87,6 +87,7 @@ const EditProfile = ({ userId, onBackToProfile }) => {
   return (
     <div className="edit-profile-container">
       <h2>Edit Profile</h2>
+      <button onClick={onBackToProfile} className="back-to-profile-button">Back to Profile</button>
 
       {/* Basic Details Section */}
       <div className="edit-section">
@@ -207,7 +208,6 @@ const EditProfile = ({ userId, onBackToProfile }) => {
           <button type="submit">Update Work Details</button>
         </form>
       </div>
-      <button onClick={onBackToProfile} className="back-to-profile-button">Back to Profile</button>
 
     </div>
   );

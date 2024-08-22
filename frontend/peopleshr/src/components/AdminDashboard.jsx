@@ -7,6 +7,8 @@ import logo from '../assets/PeoplesHR.webp'; // Update with the correct path to 
 // import RoosterPlanning from './RoosterPlanning';
 // import CompanyAnnouncements from './CompanyAnnouncements';
 // import SpecialEvents from './SpecialEvents';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTachometerAlt, faUsers, faCalendarAlt, faClipboardList, faBullhorn, faStar, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 const AdminDashboard = () => {
   const [selectedTab, setSelectedTab] = useState('admin-dashboard');
@@ -50,6 +52,7 @@ const AdminDashboard = () => {
             className={`nav-link ${selectedTab === 'admin-dashboard' ? 'active' : ''}`}
             onClick={() => setSelectedTab('admin-dashboard')}
           >
+            <FontAwesomeIcon icon={faTachometerAlt} className="nav-icon" />
             Admin Dashboard
           </a>
           <a
@@ -57,6 +60,7 @@ const AdminDashboard = () => {
             className={`nav-link ${selectedTab === 'manage-employees' ? 'active' : ''}`}
             onClick={() => setSelectedTab('manage-employees')}
           >
+            <FontAwesomeIcon icon={faUsers} className="nav-icon" />
             Manage Employees
           </a>
           <a
@@ -64,6 +68,7 @@ const AdminDashboard = () => {
             className={`nav-link ${selectedTab === 'leave-management' ? 'active' : ''}`}
             onClick={() => setSelectedTab('leave-management')}
           >
+            <FontAwesomeIcon icon={faCalendarAlt} className="nav-icon" />
             Leave Management
           </a>
           <a
@@ -71,6 +76,7 @@ const AdminDashboard = () => {
             className={`nav-link ${selectedTab === 'rooster-planning' ? 'active' : ''}`}
             onClick={() => setSelectedTab('rooster-planning')}
           >
+            <FontAwesomeIcon icon={faClipboardList} className="nav-icon" />
             Rooster Planning
           </a>
           <a
@@ -78,18 +84,21 @@ const AdminDashboard = () => {
             className={`nav-link ${selectedTab === 'company-announcements' ? 'active' : ''}`}
             onClick={() => setSelectedTab('company-announcements')}
           >
-            Company Announcements
+            <FontAwesomeIcon icon={faBullhorn} className="nav-icon" />
+             Company Announcements
           </a>
           <a
             href="#special-events"
             className={`nav-link ${selectedTab === 'special-events' ? 'active' : ''}`}
             onClick={() => setSelectedTab('special-events')}
           >
+            <FontAwesomeIcon icon={faStar} className="nav-icon" />
             Manage Special Events
           </a>
         </nav>
         <div className="logout-container">
           <a href="#" className="nav-link logout" onClick={handleLogout}>
+            <FontAwesomeIcon icon={faSignOutAlt} className="nav-icon" />
             Logout
           </a>
         </div>

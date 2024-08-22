@@ -39,11 +39,12 @@ router.post('/login', (req, res) => {
         const token = jwt.sign({ id: user.id, isAdmin: user.isAdmin }, 'your_jwt_secret', {
           expiresIn: '1h',
         });
-
+        console.log("isAdmin", user.isAdmin);
         return res.json({
           message: 'Login successful',
           token,
-          userId: user.id
+          userId: user.id,
+          isAdmin: user.isAdmin
         });
       } else {
         return res.status(400).json({ message: 'Invalid email or password' });

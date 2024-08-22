@@ -18,8 +18,13 @@ const Login = () => {
       // Store the token and redirect to the dashboard or home page
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.userId);
+      localStorage.setItem('isAdmin', response.data.isAdmin);
       // Redirect to a different page if needed
-      window.location.href = '/dashboard';
+      if (response?.data?.isAdmin) {
+        window.location.href = '/admin-dashboard';
+      } else {
+        window.location.href = '/dashboard';
+      }
     } catch (err) {
       setError('Invalid email or password');
     }

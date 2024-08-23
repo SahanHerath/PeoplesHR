@@ -14,8 +14,11 @@ function App(){
             <Route path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register/>} />
             <Route exact path="/registerDetails" element={<RegisterDetails/>} />
-            <Route exact path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
-            <Route exact path="/admin-dashboard" element={<PrivateRoute element={<AdminDashboard />} />} />
+            {/* <Route exact path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} /> */}
+            <Route exact path="/dashboard" element={<Dashboard />} />
+
+            {/* <Route exact path="/admin-dashboard" element={<PrivateRoute element={<AdminDashboard />} />} /> */}
+            <Route exact path="/admin-dashboard" element={<AdminDashboard />} />
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
     </Router>

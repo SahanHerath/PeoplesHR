@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
-import DashboardContent from './DashboardContent'; // Import the new component
-import logo from '../assets/PeoplesHR.webp'; // Update with the correct path to your logo
+import DashboardContent from './DashboardContent'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTachometerAlt, faUser, faCalendarAlt, faSignOutAlt, faPlaneDeparture } from '@fortawesome/free-solid-svg-icons'; // Import icons
+import logo from '../assets/PeoplesHR.webp';
 import Profile from './Profile';
 import LeaveRequest from './LeaveRequest';
 
@@ -11,7 +13,7 @@ const Dashboard = () => {
   const renderContent = () => {
     switch (selectedTab) {
       case 'profile':
-        return <Profile/>;
+        return <Profile />;
       case 'calendar':
         return <h1>Calendar Content</h1>;
       case 'request-leave':
@@ -23,13 +25,10 @@ const Dashboard = () => {
   };
 
   const handleLogout = () => {
-      // Clear the user-related data from localStorage
-      localStorage.removeItem('userId');
-      localStorage.removeItem('token');
-  
-      // Redirect the user to the login page
-      window.location.href = '/login';
-  }
+    localStorage.removeItem('userId');
+    localStorage.removeItem('token');
+    window.location.href = '/login';
+  };
 
   return (
     <div className="dashboard-container">
@@ -43,33 +42,33 @@ const Dashboard = () => {
             className={`nav-link ${selectedTab === 'dashboard' ? 'active' : ''}`}
             onClick={() => setSelectedTab('dashboard')}
           >
-            Dashboard
+            <FontAwesomeIcon icon={faTachometerAlt} className="nav-icon" /> Dashboard
           </a>
           <a
             href="#profile"
             className={`nav-link ${selectedTab === 'profile' ? 'active' : ''}`}
             onClick={() => setSelectedTab('profile')}
           >
-            Profile
+            <FontAwesomeIcon icon={faUser} className="nav-icon" /> Profile
           </a>
           <a
             href="#calendar"
             className={`nav-link ${selectedTab === 'calendar' ? 'active' : ''}`}
             onClick={() => setSelectedTab('calendar')}
           >
-            Calendar
+            <FontAwesomeIcon icon={faCalendarAlt} className="nav-icon" /> Calendar
           </a>
           <a
             href="#request-leave"
             className={`nav-link ${selectedTab === 'request-leave' ? 'active' : ''}`}
             onClick={() => setSelectedTab('request-leave')}
           >
-            Request Leave
+            <FontAwesomeIcon icon={faPlaneDeparture} className="nav-icon" /> Request Leave
           </a>
         </nav>
         <div className="logout-container">
           <a href="#" className="nav-link logout" onClick={handleLogout}>
-            Logout
+            <FontAwesomeIcon icon={faSignOutAlt} className="nav-icon" /> Logout
           </a>
         </div>
       </div>

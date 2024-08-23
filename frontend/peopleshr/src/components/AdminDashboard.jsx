@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './AdminDashboard.css'; // Ensure you create and style this CSS file
 import DashboardContent from './DashboardContent'; // Import the content components as needed
 import logo from '../assets/PeoplesHR.webp'; // Update with the correct path to your logo
-// import ManageEmployees from './ManageEmployees';
-// import LeaveManagement from './LeaveManagement';
+import ManageEmployees from './ManageEmployees.jsx';
+import LeaveManagement from './LeaveManagement.jsx';
 // import RoosterPlanning from './RoosterPlanning';
 // import CompanyAnnouncements from './CompanyAnnouncements';
 // import SpecialEvents from './SpecialEvents';
@@ -16,9 +16,9 @@ const AdminDashboard = () => {
   const renderContent = () => {
     switch (selectedTab) {
       case 'manage-employees':
-        return <h1>ManageEmployees</h1>;//<ManageEmployees />;
+        return <ManageEmployees />;
       case 'leave-management':
-        return <h1>Leave Management</h1>;//<LeaveManagement />;
+        return <LeaveManagement />;
       case 'rooster-planning':
         return <h1>Rooster management</h1>;//<RoosterPlanning />;
       case 'company-announcements':

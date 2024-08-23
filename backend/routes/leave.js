@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 // POST route to handle leave requests
 router.post('/casual-leave-request', (req, res) => {
   const { user_id, leaveType, date, reason } = req.body;
-  const status = 'pending';
+  const status = 'Pending';
 
   const query = `
     INSERT INTO leaves (user_id, type, start_date, reason, status)
@@ -32,7 +32,7 @@ router.post('/casual-leave-request', (req, res) => {
 router.post('/medical-leave-request', (req, res) => {
     console.log("req.body", req.body)
     const { user_id, leaveType, date, reason } = req.body;
-    const status = 'pending';
+    const status = 'Pending';
   
     const query = `
       INSERT INTO leaves (user_id, type, start_date, reason, status)
@@ -50,7 +50,7 @@ router.post('/medical-leave-request', (req, res) => {
 
 router.post('/annual-leave-request', (req, res) => {
     const { user_id, leaveType, start_date, end_date, number_of_days, reason } = req.body;
-    const status = 'pending';
+    const status = 'Pending';
   
     const query = `
       INSERT INTO leaves (user_id, type, start_date, end_date, number_of_days, reason, status)
@@ -68,7 +68,7 @@ router.post('/annual-leave-request', (req, res) => {
 
   router.post('/halfday-leave-request', (req, res) => {
     const { user_id, leaveType, date, reason, session } = req.body;
-    const status = 'pending';
+    const status = 'Pending';
   
     const query = `
       INSERT INTO leaves (user_id, type, start_date, reason, status, session)
@@ -101,8 +101,8 @@ router.post('/annual-leave-request', (req, res) => {
   // PUT route to accept a leave request
   router.put('/leaves/:id/accept', (req, res) => {
     const leaveId = req.params.id;
-    const query = 'UPDATE leaves SET status = ? WHERE id = ?';
-    connection.query(query, ['accepted', leaveId], (err, result) => {
+    const query = 'UPDATE leaves SET status = ? WHERE leave_id = ?';
+    connection.query(query, ['Accepted', leaveId], (err, result) => {
       if (err) {
         return res.status(500).json({ success: false, message: 'Failed to accept leave request', error: err });
       }
@@ -113,8 +113,8 @@ router.post('/annual-leave-request', (req, res) => {
   // PUT route to reject a leave request
   router.put('/leaves/:id/reject', (req, res) => {
     const leaveId = req.params.id;
-    const query = 'UPDATE leaves SET status = ? WHERE id = ?';
-    connection.query(query, ['rejected', leaveId], (err, result) => {
+    const query = 'UPDATE leaves SET status = ? WHERE leave_id = ?';
+    connection.query(query, ['Rejected', leaveId], (err, result) => {
       if (err) {
         return res.status(500).json({ success: false, message: 'Failed to reject leave request', error: err });
       }

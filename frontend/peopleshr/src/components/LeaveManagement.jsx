@@ -23,6 +23,7 @@ const LeaveManagement = () => {
   };
 
   const applyFilters = () => {
+    console.log("applyFilters");
     let filtered = leaves;
 
     if (filters.type) {
@@ -41,8 +42,8 @@ const LeaveManagement = () => {
   const handleAccept = (leaveId) => {
     axios.put(`/api/leave/leaves/${leaveId}/accept`)
       .then(() => {
-        setLeaves(leaves.map(leave => leave.id === leaveId ? { ...leave, status: 'accepted' } : leave));
-        setFilteredLeaves(filteredLeaves.map(leave => leave.id === leaveId ? { ...leave, status: 'accepted' } : leave));
+        setLeaves(leaves.map(leave => leave.leave_id === leaveId ? { ...leave, status: 'Accepted' } : leave));
+        setFilteredLeaves(filteredLeaves.map(leave => leave.leave_id === leaveId ? { ...leave, status: 'Accepted' } : leave));
       })
       .catch(error => console.error('Error accepting leave', error));
   };
@@ -50,8 +51,8 @@ const LeaveManagement = () => {
   const handleReject = (leaveId) => {
     axios.put(`/api/leave/leaves/${leaveId}/reject`)
       .then(() => {
-        setLeaves(leaves.map(leave => leave.id === leaveId ? { ...leave, status: 'rejected' } : leave));
-        setFilteredLeaves(filteredLeaves.map(leave => leave.id === leaveId ? { ...leave, status: 'rejected' } : leave));
+        setLeaves(leaves.map(leave => leave.leave_id === leaveId ? { ...leave, status: 'Rejected' } : leave));
+        setFilteredLeaves(filteredLeaves.map(leave => leave.leave_id === leaveId ? { ...leave, status: 'Rejected' } : leave));
       })
       .catch(error => console.error('Error rejecting leave', error));
   };
@@ -77,7 +78,7 @@ const LeaveManagement = () => {
         <select name="status" value={filters.status} onChange={handleFilterChange}>
           <option value="">All Status</option>
           <option value="Pending">Pending</option>
-          <option value="Approved">Approved</option>
+          <option value="Accepted">Accepted</option>
           <option value="Rejected">Rejected</option>
         </select>
         <button className="apply-button" onClick={applyFilters}>Apply Filters</button>
@@ -107,9 +108,20 @@ const LeaveManagement = () => {
               <td>{leave.number_of_days ? leave.number_of_days : '--'}</td>
               <td>{leave.status}</td>
               <td>
-                <button onClick={() => handleAccept(leave.leave_id)} disabled={leave.status !== 'pending'}>Accept</button>
-                <button onClick={() => handleReject(leave.leave_id)} disabled={leave.status !== 'pending'}>Reject</button>
-              </td>
+                {leave.status === 'Pending' ? (
+                    <>
+                    <button onClick={() => handleAccept(leave.leave_id)} disabled={leave.status !== 'Pending'}>
+                        Accept
+                    </button>
+                    <button onClick={() => handleReject(leave.leave_id)} disabled={leave.status !== 'Pending'}>
+                        Reject
+                    </button>
+                    </>
+                ) : (
+                    <span>{leave.status}</span>
+                )}
+                </td>
+
             </tr>
           ))}
         </tbody>

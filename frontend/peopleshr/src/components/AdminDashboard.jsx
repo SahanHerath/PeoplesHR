@@ -20,7 +20,7 @@ const AdminDashboard = () => {
       case 'leave-management':
         return <LeaveManagement />;
       case 'rooster-planning':
-        return <h1>Rooster management</h1>;//<RoosterPlanning />;
+        return <h1>Roster management</h1>;//<RoosterPlanning />;
       case 'company-announcements':
         return <h1>Company Annoucement</h1>;//<CompanyAnnouncements />;
       case 'special-events':
@@ -77,7 +77,7 @@ const AdminDashboard = () => {
             onClick={() => setSelectedTab('rooster-planning')}
           >
             <FontAwesomeIcon icon={faClipboardList} className="nav-icon" />
-            Rooster Planning
+            Roster Planning
           </a>
           <a
             href="#company-announcements"
